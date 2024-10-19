@@ -21,7 +21,7 @@ public class GetListStudent {
 
         input.execute();
 
-        assertEquals(4, presenter.getOutputData().getListStudents().size());
+        assertEquals(4, presenter.getListStudentDTO().size());
         
     }
 

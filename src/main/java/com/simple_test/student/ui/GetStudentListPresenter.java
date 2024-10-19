@@ -1,18 +1,29 @@
 package com.simple_test.student.ui;
 
+import java.util.List;
+
 import com.simple_test.student.usecase.GetStudentListOuputBoundary;
-import com.simple_test.student.usecase.OutputData;
+import com.simple_test.student.usecase.GetStudentListOutputDTO;
 import com.simple_test.student.usecase.ResponseData;
 
 public class GetStudentListPresenter implements GetStudentListOuputBoundary {
-    private OutputData outputData = null;
+
+    private List<GetStudentListOutputDTO> listStudentDTO = null;
+    
+
     @Override
-    public void exportResult(ResponseData rsResult) {
-        outputData = (OutputData)rsResult;
+    public void present(List<GetStudentListOutputDTO> listDTO) {
+        this.listStudentDTO = listDTO;
     }
 
-    public OutputData getOutputData() {
-        return outputData;
+    @Override
+    public void exportResult(ResponseData rsResult) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'exportResult'");
+    }
+
+    public List<GetStudentListOutputDTO> getListStudentDTO() {
+        return listStudentDTO;
     }
 
 }

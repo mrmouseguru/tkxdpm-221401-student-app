@@ -1,5 +1,6 @@
 package com.simple_test.student.usecase;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.simple_test.student.entity.Student;
@@ -25,9 +26,18 @@ public class GetStudentListUseCase implements GetStudentListInpuBoundary {
     public void execute() {
         //lay dan sanh sinh vien
         List<Student> list = getSLDatabaseBoundary.getStudentList();
-        OutputData rsResult = new OutputData(list);
+        List<GetStudentListOutputDTO> listDTO = new ArrayList<>();
 
-        getSLOutputBoundary.exportResult(rsResult);
+        //chuyen list Student sang DTO
+        for (Student student : list) {
+            GetStudentListOutputDTO studentDTO = new GetStudentListOutputDTO
+            (student.getHoTen(), student.getNgaySinh(), student.getDiaChi(),
+            student.getNganh(), student.tinhDiemTB(), student.getHocLuc());
+
+            listDTO.add(studentDTO);
+        }
+
+        getSLOutputBoundary.present(listDTO);
     }
 
 }
