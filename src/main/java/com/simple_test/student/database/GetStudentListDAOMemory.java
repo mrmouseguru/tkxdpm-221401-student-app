@@ -45,7 +45,7 @@ public class GetStudentListDAOMemory implements GetStudentListDatabaseBoundary {
         calendar3.set(Calendar.DAY_OF_MONTH, 8);
         
         // Tạo đối tượng Date từ Calendar
-        Date date3 = calendar1.getTime();
+        Date date3 = calendar3.getTime();
 
         Calendar calendar4 = Calendar.getInstance();
         
@@ -55,13 +55,13 @@ public class GetStudentListDAOMemory implements GetStudentListDatabaseBoundary {
         calendar4.set(Calendar.DAY_OF_MONTH, 1);
         
         // Tạo đối tượng Date từ Calendar
-        Date date4 = calendar1.getTime();
+        Date date4 = calendar4.getTime();
 
         
-        list.add(new PhanMemStudent("Nguyen Van A", date1, "HCM", 5, 5, 5));
+        list.add(new PhanMemStudent("Nguyen Van Dong", date1, "HCM", 10, 10, 10));
         list.add(new KinhTeStudent("Nguyen Van B", date2, "HN", 6, 6));
         list.add(new PhanMemStudent("Nguyen Thi C", date3, "DN", 8, 8, 8));
-        list.add(new KinhTeStudent("Tran Van Mít", date4, "YB", 9, 9));
+        list.add(new KinhTeStudent("Tran Van Mít", date4, "YB", 3, 3));
 
 
     }
