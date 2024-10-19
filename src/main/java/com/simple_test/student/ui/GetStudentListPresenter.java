@@ -9,11 +9,15 @@ import com.simple_test.student.usecase.ResponseData;
 public class GetStudentListPresenter implements GetStudentListOuputBoundary {
 
     private List<GetStudentListOutputDTO> listStudentDTO = null;
+
+    
     
 
     @Override
     public void present(List<GetStudentListOutputDTO> listDTO) {
         this.listStudentDTO = listDTO;
+        GetStudentListForm form = new GetStudentListForm();
+        form.createAndShowGUI(listDTO);
     }
 
     @Override
